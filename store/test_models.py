@@ -1,8 +1,7 @@
 from django.test import TestCase
-
-# Create your tests here.
 from store.models import Category, Product
 from django.contrib.auth.models import User
+# Create your tests here.
 
 
 class TestCategoriesModel(TestCase):
