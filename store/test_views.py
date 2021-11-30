@@ -1,9 +1,10 @@
 from unittest import skip
-from django.test import TestCase
-from django.test import Client
-from django.urls import reverse
-from store.models import Category, Product, User
+
 from django.http import HttpRequest
+from django.test import Client, TestCase
+from django.urls import reverse
+
+from store.models import Category, Product, User
 from store.views import all_products
 
 
