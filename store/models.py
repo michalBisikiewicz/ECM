@@ -29,7 +29,7 @@ class Product(models.Model):
     created_by = models.ForeignKey(User, related_name='product_creator', on_delete=models.CASCADE, default='admin')
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    image = models. ImageField(upload_to='images/', blank=True)
+    image = models. ImageField(upload_to='images/', default='images/default.jpg')
     slug = models.SlugField(max_length=200)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     in_stock = models.BooleanField(default=True)
