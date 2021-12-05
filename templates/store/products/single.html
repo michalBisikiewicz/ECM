@@ -53,10 +53,12 @@
             url: '{% url "basket:basket_add" %}',
             data: {
                 productid: $('#add-button').val(),
+                productqty: $('#select option:selected').text(),
                 csrfmiddlewaretoken: "{{ csrf_token }}",
                 action: 'post'
             },
             success: function (json) {
+                document.getElementById("basket_qty").innerHTML = json.qty
             },
             error: function (xhr, errmsg, err) {}
         });
