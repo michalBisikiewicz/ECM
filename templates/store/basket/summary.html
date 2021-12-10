@@ -78,7 +78,7 @@ $(document).on('click', '.delete-button', function (e) {
         success: function (json) {
             $('.product-item[data-index="' + prodid + '"]').remove();
             document.getElementById("subtotal").innerHTML = json.subtotal;
-            document.getElementById("basket-qty").innerHTML = json.qty
+            document.getElementById("basket_qty").innerHTML = json.qty
         },
         error: function (xhr, errmsg, err) {}
     });
@@ -98,7 +98,7 @@ $(document).on('click', '.update-button', function (e) {
             action: 'post'
         },
         success: function (json) {
-            document.getElementById("basket-qty").innerHTML = json.qty
+            document.getElementById("basket_qty").innerHTML = json.qty
             document.getElementById("subtotal").innerHTML = json.subtotal
         },
         error: function (xhr, errmsg, err) {}
