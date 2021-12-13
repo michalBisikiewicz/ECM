@@ -1,5 +1,7 @@
+from importlib import import_module
 from unittest import skip
 
+from django.conf import settings
 from django.http import HttpRequest
 from django.test import Client, TestCase
 from django.urls import reverse
@@ -52,6 +54,8 @@ class TestViewResponses(TestCase):
         Example: code validation, search HTML for text
         """
         request = HttpRequest()
+        engine = import_module(settings.SESSION_ENGINE)
+        request.session = engine.SessionStore()
         response = product_all(request)
         html = response.content.decode('utf8')
         self.assertIn('<title>PRIMO</title>', html)
