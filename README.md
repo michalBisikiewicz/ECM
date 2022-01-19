@@ -1,1 +1,1 @@
-# Basic e-commerce store built with Django.
+# E-commerce store built with Django.
